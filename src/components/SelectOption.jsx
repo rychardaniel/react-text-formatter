@@ -7,10 +7,10 @@ const SelectOption = () => {
             <Title>SELECT OPTION</Title>
             <div className="flex flex-col gap-6 items-center">
                 <ButtonOption>UpperCase</ButtonOption>
-                <ButtonOption>UpperCase</ButtonOption>
-                <ButtonOption>UpperCase</ButtonOption>
-                <ButtonOption>UpperCase</ButtonOption>
-                <ButtonOption>UpperCase</ButtonOption>
+                <ButtonOption>LowerCase</ButtonOption>
+                <ButtonOption>Slug</ButtonOption>
+                <ButtonOption>Captalize</ButtonOption>
+                <ButtonOption>Replace</ButtonOption>
             </div>
         </div>
     );
