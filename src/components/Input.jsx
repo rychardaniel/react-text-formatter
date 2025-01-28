@@ -1,17 +1,35 @@
 import { ClipboardPaste, Eraser } from "lucide-react";
+import ButtonIO from "./ButtonIO";
 
 const Input = ({ input, setInput }) => {
+    function onClickPaste() {
+        navigator.clipboard
+            .readText()
+            .then((text) => setInput(text))
+            .catch((err) =>
+                console.error(`Erro ao ler área de transferência: ${err}`)
+            );
+    }
+
+    function onClickErase() {
+        setInput("");
+    }
+
     return (
         <div className="text-white text-left px-6 flex flex-col gap-2">
             <h3>Input</h3>
             <textarea
-                className="w-full p-2 bg-neutral-800 text-white rounded-md border border-white focus:outline-none focus:ring-1"
+                className="w-full h-auto p-2 bg-neutral-800 text-white rounded-md border border-white focus:outline-none focus:ring-1"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             ></textarea>
             <div className="flex gap-2">
-                <ClipboardPaste />
-                <Eraser />
+                <ButtonIO onClick={onClickPaste}>
+                    <ClipboardPaste />
+                </ButtonIO>
+                <ButtonIO onClick={onClickErase}>
+                    <Eraser />
+                </ButtonIO>
             </div>
         </div>
     );
