@@ -4,7 +4,11 @@ import FormattingOptions from "./components/FormattingOptions";
 import SelectOption from "./components/SelectOption";
 
 function App() {
-    const [selectedOption, setSelectedOption] = useState(1);
+    const [selectedOption, setSelectedOption] = useState({
+        type: 1,
+        accents: false,
+        punctuation: false,
+    });
     const [input, setInput] = useState("");
     const [output, setOutput] = useState("");
 

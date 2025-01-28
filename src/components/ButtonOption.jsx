@@ -7,11 +7,16 @@ const ButtonOption = ({
     return (
         <button
             className={`p-6 w-1/2 rounded-md cursor-pointer ${
-                selectedOption === type
+                selectedOption.type === type
                     ? "bg-zinc-200 text-black"
                     : "bg-neutral-800 text-white"
             }`}
-            onClick={() => setSelectedOption(type)}
+            onClick={() =>
+                setSelectedOption((prevState) => ({
+                    ...prevState,
+                    type,
+                }))
+            }
         >
             {children}
         </button>
