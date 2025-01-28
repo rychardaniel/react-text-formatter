@@ -8,7 +8,10 @@ function App() {
 
     return (
         <div className="bg-neutral-800 w-screen h-screen flex p-6 gap-6">
-            <SelectOption setSelectedOption={setSelectedOption} />
+            <SelectOption
+                selectedOption={selectedOption}
+                setSelectedOption={setSelectedOption}
+            />
             <FormattingOptions />
             <Desktop />
         </div>
