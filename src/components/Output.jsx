@@ -18,7 +18,7 @@ const Output = ({ output }) => {
                 className="w-full p-2 bg-neutral-800 text-white rounded-md border border-white focus:outline-none focus:ring-1"
             ></textarea>
             <div className="flex gap-2">
-                <ButtonIO onClick={onClickCopy}>
+                <ButtonIO onClick={onClickCopy} title="Copy">
                     <ClipboardCopy />
                 </ButtonIO>
             </div>

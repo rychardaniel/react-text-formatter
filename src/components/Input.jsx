@@ -7,7 +7,9 @@ const Input = ({ input, setInput }) => {
             .readText()
             .then((text) => setInput(text))
             .catch((err) =>
-                console.error(`Erro ao ler área de transferência: ${err}`)
+                console.error(
+                    `Erro ao ler conteúdo da área de transferência: ${err}`
+                )
             );
     }
 
@@ -24,10 +26,10 @@ const Input = ({ input, setInput }) => {
                 onChange={(e) => setInput(e.target.value)}
             ></textarea>
             <div className="flex gap-2">
-                <ButtonIO onClick={onClickPaste}>
+                <ButtonIO onClick={onClickPaste} title="Paste">
                     <ClipboardPaste />
                 </ButtonIO>
-                <ButtonIO onClick={onClickErase}>
+                <ButtonIO onClick={onClickErase} title="Clear">
                     <Eraser />
                 </ButtonIO>
             </div>
