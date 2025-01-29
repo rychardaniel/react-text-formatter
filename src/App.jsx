@@ -35,6 +35,13 @@ function App() {
                         .replace(/\s+/g, "-")
                 );
                 break;
+            case 4:
+                setOutput(
+                    input
+                        .toLowerCase()
+                        .replace(/(^|\s)\S/g, (match) => match.toUpperCase())
+                );
+                break;
             default:
                 break;
         }
