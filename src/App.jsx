@@ -4,8 +4,8 @@ import FormattingOptions from "./components/FormattingOptions";
 import SelectOption from "./components/SelectOption";
 
 function App() {
-    const [selectedOption, setSelectedOption] = useState(
-        JSON.parse(localStorage.getItem("selectedOption")) || {
+    const [options, setOptions] = useState(
+        JSON.parse(localStorage.getItem("options")) || {
             type: 1,
             accents: false,
             punctuation: false,
@@ -15,9 +15,9 @@ function App() {
     const [output, setOutput] = useState("");
 
     useEffect(() => {
-        localStorage.setItem("selectedOption", JSON.stringify(selectedOption));
+        localStorage.setItem("options", JSON.stringify(options));
 
-        switch (selectedOption.type) {
+        switch (options.type) {
             case 1:
                 setOutput(input.toUpperCase());
                 break;
@@ -45,14 +45,11 @@ function App() {
             default:
                 break;
         }
-    }, [selectedOption, input]);
+    }, [options, input]);
 
     return (
         <div className="bg-neutral-800 w-screen h-screen flex p-6 gap-6">
-            <SelectOption
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
-            />
+            <SelectOption options={options} setOptions={setOptions} />
             <FormattingOptions />
             <Desktop input={input} setInput={setInput} output={output} />
         </div>

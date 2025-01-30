@@ -1,43 +1,43 @@
 import ButtonOption from "./ButtonOption";
 import Title from "./Title";
 
-const SelectOption = ({ selectedOption, setSelectedOption }) => {
+const SelectOption = ({ options, setOptions }) => {
     return (
         <div className="bg-neutral-700 w-1/5 rounded-md p-2 text-center">
             <Title>SELECT OPTION</Title>
             <div className="flex flex-col gap-6 items-center">
                 <ButtonOption
                     type={1}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
+                    options={options}
+                    setOptions={setOptions}
                 >
                     UpperCase
                 </ButtonOption>
                 <ButtonOption
                     type={2}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
+                    options={options}
+                    setOptions={setOptions}
                 >
                     LowerCase
                 </ButtonOption>
                 <ButtonOption
                     type={3}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
+                    options={options}
+                    setOptions={setOptions}
                 >
                     Slug
                 </ButtonOption>
                 <ButtonOption
                     type={4}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
+                    options={options}
+                    setOptions={setOptions}
                 >
                     Captalize
                 </ButtonOption>
                 <ButtonOption
                     type={5}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
+                    options={options}
+                    setOptions={setOptions}
                 >
                     Replace
                 </ButtonOption>
