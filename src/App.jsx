@@ -8,8 +8,8 @@ function App() {
     const [options, setOptions] = useState(
         JSON.parse(localStorage.getItem("options")) || {
             type: 1,
-            accents: false,
-            punctuation: false,
+            accents: true,
+            punctuation: true,
         }
     );
     const [input, setInput] = useState("");

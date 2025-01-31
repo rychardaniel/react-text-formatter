@@ -18,7 +18,9 @@ export function transformInput(input, options) {
                 .replace(/(^|\s)\S/g, (match) => match.toUpperCase()),
     };
 
-    let result = transformations[options.type](input);
+    let result = transformations[options.type]
+        ? transformations[options.type](input)
+        : input;
 
     if (!options.accents && options.type !== 3) {
         result = result.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
