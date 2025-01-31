@@ -3,9 +3,9 @@ import Title from "./Title";
 
 const SelectOption = ({ options, setOptions }) => {
     return (
-        <div className="bg-neutral-700 w-1/5 rounded-md p-2 text-center">
+        <div className="bg-neutral-700 w-full md:w-1/5 rounded-md p-2 text-center md:overflow-y-auto">
             <Title>SELECT OPTION</Title>
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col gap-6 items-center ">
                 <ButtonOption
                     type={1}
                     options={options}
