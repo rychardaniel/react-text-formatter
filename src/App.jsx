@@ -48,7 +48,7 @@ function App() {
     }, [options, input]);
 
     return (
-        <div className="bg-neutral-800 w-screen h-full md:h-screen flex flex-col md:flex-row p-6 gap-6">
+        <div className="bg-neutral-800 w-screen min-h-screen flex flex-col md:flex-row p-6 gap-6">
             <SelectOption options={options} setOptions={setOptions} />
             <FormattingOptions options={options} setOptions={setOptions} />
             <Desktop input={input} setInput={setInput} output={output} />
