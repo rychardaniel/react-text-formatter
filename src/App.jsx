@@ -10,6 +10,7 @@ function App() {
             type: 1,
             accents: true,
             punctuation: true,
+            slugSeparator: "-",
         }
     );
     const [input, setInput] = useState("");

@@ -11,7 +11,7 @@ export function transformInput(input, options) {
                 .replace(/[\u0300-\u036f]/g, "")
                 .replace(/[^a-z0-9 ]/g, "")
                 .trim()
-                .replace(/\s+/g, "-"),
+                .replace(/\s+/g, options.slugSeparator),
         4: (text) =>
             text
                 .toLowerCase()

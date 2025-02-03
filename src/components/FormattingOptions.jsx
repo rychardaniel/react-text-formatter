@@ -1,5 +1,6 @@
 import Title from "./Title";
 import YesOrNo from "./YesOrNo";
+import SlugSelector from "./SlugSelector";
 
 const FormattingOptions = ({ options, setOptions }) => {
     const changeAccents = (accents) => {
@@ -15,19 +16,47 @@ const FormattingOptions = ({ options, setOptions }) => {
         }));
     };
 
+    const changeSlugSeparator = (slugSeparator) => {
+        setOptions((prevState) => ({
+            ...prevState,
+            slugSeparator,
+        }));
+    };
+
+    const renderOptions = () => {
+        if (options.type === 1 || options.type === 2 || options.type === 4) {
+            return (
+                <>
+                    <YesOrNo
+                        key="accents"
+                        change={changeAccents}
+                        selected={options.accents}
+                    >
+                        Accents?
+                    </YesOrNo>
+                    <YesOrNo
+                        key="punctuation"
+                        change={changePunctuation}
+                        selected={options.punctuation}
+                    >
+                        Punctuation?
+                    </YesOrNo>
+                </>
+            );
+        }
+        if (options.type === 3) {
+            return <SlugSelector />;
+        }
+        if (options.type === 5) {
+            return <h1 className="text-white">Em desenvolvimento</h1>;
+        }
+    };
+
     return (
         <div className="bg-neutral-700 w-full md:w-1/5 rounded-md p-2 text-center">
             <Title>FORMATTING OPTIONS</Title>
             <div className="flex flex-col gap-6 items-center">
-                <YesOrNo change={changeAccents} options={options.accents}>
-                    Accents?
-                </YesOrNo>
-                <YesOrNo
-                    change={changePunctuation}
-                    options={options.punctuation}
-                >
-                    Punctuation?
-                </YesOrNo>
+                {renderOptions()}
             </div>
         </div>
     );
