@@ -22,12 +22,13 @@ export function transformInput(input, options) {
         ? transformations[options.type](input)
         : input;
 
-    if (!options.accents && options.type !== 3) {
+    if (options.type === 3) return result;
+
+    if (!options.accents) {
         result = result.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
-    console.log(result, options);
 
-    if (!options.punctuation && options.type !== 3) {
+    if (!options.punctuation) {
         result = result.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'<>[\]]/g, "");
     }
 
