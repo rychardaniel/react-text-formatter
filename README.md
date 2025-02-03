@@ -4,7 +4,7 @@ Um simples formatador de texto desenvolvido com React.
 
 🚀 Demonstração
 
-Acesse a aplicação: [React Text Formatter](https://rychardaniel.github.io/react-text-formatter/)
+Acesse a aplicação: <a href="https://rychardaniel.github.io/react-text-formatter" target="_blank">React Text Formatter</a>
 
 📦 Instalação e Uso
 
