@@ -45,7 +45,12 @@ const FormattingOptions = ({ options, setOptions }) => {
             );
         }
         if (options.type === 3) {
-            return <SlugSelector />;
+            return (
+                <SlugSelector
+                    options={options}
+                    changeSlugSeparator={changeSlugSeparator}
+                />
+            );
         }
         if (options.type === 5) {
             return <h1 className="text-white">Em desenvolvimento</h1>;
@@ -54,7 +59,9 @@ const FormattingOptions = ({ options, setOptions }) => {
 
     return (
         <div className="bg-neutral-700 w-full md:w-1/5 rounded-md p-2 text-center">
-            <Title>FORMATTING OPTIONS</Title>
+            <div>
+                <Title>FORMATTING OPTIONS</Title>
+            </div>
             <div className="flex flex-col gap-6 items-center">
                 {renderOptions()}
             </div>
