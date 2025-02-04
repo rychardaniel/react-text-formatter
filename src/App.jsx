@@ -5,14 +5,18 @@ import SelectOption from "./components/SelectOption";
 import { transformInput } from "./transformInput";
 
 function App() {
-    const [options, setOptions] = useState(
-        JSON.parse(localStorage.getItem("options")) || {
-            type: 1,
-            accents: true,
-            punctuation: true,
-            slugSeparator: "-",
-        }
-    );
+    const defaultOptions = {
+        type: 1,
+        accents: true,
+        punctuation: true,
+        slugSeparator: "-",
+    };
+
+    const [options, setOptions] = useState(() => {
+        const storedOptions = JSON.parse(localStorage.getItem("options")) || {};
+        return { ...defaultOptions, ...storedOptions };
+    });
+
     const [input, setInput] = useState("");
     const [output, setOutput] = useState("");
 
