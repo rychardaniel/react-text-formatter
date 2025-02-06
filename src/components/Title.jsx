@@ -1,8 +1,6 @@
-const Title = (props) => {
+const Title = ({ children }) => {
     return (
-        <h1 className="text-white text-xl font-bold mb-6 mt-2">
-            {props.children}
-        </h1>
+        <h1 className="text-white text-xl font-bold mb-6 mt-2">{children}</h1>
     );
 };
 
