@@ -20,7 +20,7 @@ export function transformInput(input, options) {
             text.split(options.toReplace.of).join(options.toReplace.to),
     };
 
-    if (!options.toReplace.of) {
+    if (options.type === 5 && !options.toReplace.of) {
         return input;
     }
 
