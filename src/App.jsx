@@ -10,6 +10,10 @@ function App() {
         accents: true,
         punctuation: true,
         slugSeparator: "-",
+        toReplace: {
+            of: "",
+            to: "",
+        },
     };
 
     const [options, setOptions] = useState(() => {

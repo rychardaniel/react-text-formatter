@@ -16,7 +16,13 @@ export function transformInput(input, options) {
             text
                 .toLowerCase()
                 .replace(/(^|\s)\S/g, (match) => match.toUpperCase()),
+        5: (text) =>
+            text.split(options.toReplace.of).join(options.toReplace.to),
     };
+
+    if (!options.toReplace.of) {
+        return input;
+    }
 
     let result = transformations[options.type]
         ? transformations[options.type](input)

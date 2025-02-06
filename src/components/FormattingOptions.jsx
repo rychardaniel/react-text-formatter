@@ -1,6 +1,7 @@
 import Title from "./Title";
 import YesOrNo from "./YesOrNo";
 import SlugSelector from "./SlugSelector";
+import ReplaceSelector from "./ReplaceSelector";
 
 const FormattingOptions = ({ options, setOptions }) => {
     const changeAccents = (accents) => {
@@ -20,6 +21,16 @@ const FormattingOptions = ({ options, setOptions }) => {
         setOptions((prevState) => ({
             ...prevState,
             slugSeparator,
+        }));
+    };
+
+    const changeReplace = (of, to) => {
+        setOptions((prevState) => ({
+            ...prevState,
+            toReplace: {
+                of,
+                to,
+            },
         }));
     };
 
@@ -53,7 +64,7 @@ const FormattingOptions = ({ options, setOptions }) => {
             );
         }
         if (options.type === 5) {
-            return <h1 className="text-white">Em desenvolvimento</h1>;
+            return <ReplaceSelector changeReplace={changeReplace} />;
         }
     };
 
