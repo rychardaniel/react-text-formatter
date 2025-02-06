@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import SwoppIO from "../contexts/swoppOI";
 import InputReplace from "./InputReplace";
-import { Trash } from "lucide-react";
+import { Save } from "lucide-react";
 
 const ReplaceSelector = ({ changeReplace }) => {
     const [of, setOf] = useState("");
     const [to, setTo] = useState("");
+    const { output, setInput } = useContext(SwoppIO);
 
     useEffect(() => {
         changeReplace(of, to);
@@ -15,13 +17,15 @@ const ReplaceSelector = ({ changeReplace }) => {
             <div className="flex justify-center relative">
                 <h3>To Replace</h3>
                 <button
+                    title="Salve changes"
                     className="absolute right-0 bg-neutral-200 text-neutral-800 rounded-md p-0.3 shadow-md hover:bg-zinc-200 hover:text-black active:scale-90 transition transform duration-150 cursor-pointer focus:outline-none"
                     onClick={() => {
+                        setInput(output);
                         setOf("");
                         setTo("");
                     }}
                 >
-                    <Trash className="scale-70" />
+                    <Save className="scale-70" />
                 </button>
             </div>
             <InputReplace state={of} setState={setOf}>
