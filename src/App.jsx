@@ -35,13 +35,13 @@ function App() {
     }, [input]);
 
     return (
-        <SwoppIO.Provider value={{ output, setInput }}>
-            <div className="bg-neutral-800 w-screen min-h-screen flex flex-col md:flex-row p-6 gap-6">
-                <SelectOption options={options} setOptions={setOptions} />
+        <div className="bg-neutral-800 w-screen min-h-screen flex flex-col md:flex-row p-6 gap-6">
+            <SelectOption options={options} setOptions={setOptions} />
+            <SwoppIO.Provider value={{ output, setInput }}>
                 <FormattingOptions options={options} setOptions={setOptions} />
-                <Desktop input={input} setInput={setInput} output={output} />
-            </div>
-        </SwoppIO.Provider>
+            </SwoppIO.Provider>
+            <Desktop input={input} setInput={setInput} output={output} />
+        </div>
     );
 }
 

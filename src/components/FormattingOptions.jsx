@@ -73,7 +73,7 @@ const FormattingOptions = ({ options, setOptions }) => {
             <div>
                 <Title>FORMATTING OPTIONS</Title>
             </div>
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col gap-2 items-center">
                 {renderOptions()}
             </div>
         </div>
